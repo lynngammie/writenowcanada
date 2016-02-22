@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Write Now, Canada!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A simple and intelligent way to draft a letter to your local councillor, MPP or MP about the government issues that matter to you.">
+  <meta name="author" content="Lynn Gammie">
+  <link rel="icon" 
+      type="image/png" 
+      href="assets/canadaOutlineYellow.png">
+	<link rel="stylesheet" href="styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway:700,400|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+	
+	<header>
+		<nav>
+			<div class="smallcanada">
+				<img src="assets/canadaOutlineYellow.png" alt="Outline of Canada">
+			</div>
+			<h1>Write now, Canada!</h1>
+		</nav>
+		<div class="hero">
+			<div>
+				<img class="canada" src="assets/canadaOutlineYellow.png" alt="Yellow outline of Canada">
+			</div>
+			<div>
+				<h2>Write now, Canada!</h2>
+				<p>A simple and intelligent way to draft a letter to your local councillor, MPP or MP about the government issues that matter to you. Choose a municipal, provincial or federal issue below and get writing.</p>
+		</div>
+	</header>
+
+	<div class="wrapper">
+		<form id="addressForm" class="mainForm">	
+			<div class="govWrapper clearfix">
+				<div class="govlist">
+					<input type="radio" id="municipal" name="government" value="municipal">
+					<label class="govLevel" for="municipal">municipal</label>
+					<p class="govDescription">The municipal government makes decisions on by-laws concerning public transportation, municipal parks, social services and more.</p>
+					<div class="hidden_list">
+						<input type="radio" id="libraries" name="municipal" value="libraries">
+						<label class="issueLabel" for="libraries">Libraries</label>
+						<input type="radio" id="parks" name="municipal" value="municipal parks">
+						<label class="issueLabel" for="parks">Municipal Parks</label>
+						<input type="radio" id="water" name="municipal" value="municipal waterways">
+						<label class="issueLabel" for="water">Municipal Waterways</label>
+						<input type="radio" id="police" name="municipal" value="municipal police">
+						<label class="issueLabel" for="police">Local Police</label>
+						<input type="radio" id="roadways" name="municipal" value="municipal roadways">
+						<label class="issueLabel" for="roadways">Roadways</label>
+						<input type="radio" id="housing" name="municipal" value="affordable housing">
+						<label class="issueLabel" for="housing">Affordable Housing</label>
+						<input type="radio" id="parking" name="municipal" value="parking">
+						<label class="issueLabel" for="parking">Parking</label>
+						<input type="radio" id="garbage" name="municipal" value="garbage">
+						<label class="issueLabel" for="garbage">Garbage and Recycling</label>
+						<input type="radio" id="transport" name="municipal" value="public transportation">
+						<label class="issueLabel" for="transport">Public Transportation</label>
+					</div>
+				</div>
+				<div class="govlist">
+					<input type="radio" id="provincial" name="government" value="provincial">
+					<label class="govLevel" for="provincial">provincial</label>
+					<p class="govDescription">The provincial government deals with issues that affect the province, such as health care, education and the environment.</p>
+					<div class="hidden_list">
+						<input type="radio" id="education" name="provincial" value="education">
+						<label class="issueLabel" for="education">Education</label>
+						<input type="radio" id="health_care" name="provincial" value="health care">
+						<label class="issueLabel" for="health_care">Health Care</label>
+						<input type="radio" id="provincial_parks" name="provincial" value="provincial parks">
+						<label class="issueLabel" for="provincial_parks">Provincial Parks</label>
+						<input type="radio" id="road_regulations" name="provincial" value="road regulations">
+						<label class="issueLabel" for="road_regulations">Road Regulations</label>
+						<input type="radio" id="environmental_issues" name="provincial" value="environmental issues">
+						<label class="issueLabel" for="environmental_issues">Environmental Issues</label>
+						<input type="radio" id="agriculture" name="provincial" value="agriculture">
+						<label class="issueLabel" for="agriculture">Agriculture</label>
+					</div>
+				</div>
+				<div class="govlist">
+					<input type="radio" id="federal" name="government" value="federal">
+					<label class="govLevel" for="federal">federal</label>
+					<p class="govDescription">The federal government is responsible for issues that affect Canada as a whole, such as immigration, foreign policy and international trade.</p>
+					<div class="hidden_list">
+						<input type="radio" id="foreign_policy" name="federal" value="foreign policy">
+						<label class="issueLabel" for="foreign_policy">Foreign Policy</label>
+						<input type="radio" id="national_defense" name="federal" value="national defense"><label class="issueLabel" for="national_defense">National Defense</label>
+						<input type="radio" id="taxes" name="federal" value="federal taxes"><label class="issueLabel" for="taxes">Taxes</label>
+						<input type="radio" id="immigration" name="federal" value="immigration"><label class="issueLabel" for="immigration">Immigration</label>
+						<input type="radio" id="criminal_law" name="federal" value="criminal law"><label class="issueLabel" for="criminal_law">Criminal Law</label>
+						<input type="radio" id="census" name="federal" value="the census"><label class="issueLabel" for="census">Census</label>
+						<input type="radio" id="copyright" name="federal" value="copyright law"><label class="issueLabel" for="copyright">Copyright Law </label>
+						<input type="radio" id="citizenship" name="federal" value="citizenship"><label class="issueLabel" for="citizenship">Citizenship</label>
+						<input type="radio" id="trade_regulations" name="federal" value="trade regulations"><label class="issueLabel" for="trade_regulations">Trade Regulations</label>
+					</div>
+				</div>
+			</div>
+			<div class="inputFields">
+				<input id="nameInput" type="text" placeholder="Your name">
+				<input id="textInput" type="text" placeholder="Your address">
+			</div>
+			<div class="submitButton">
+				<input type="submit" value="Draft a letter for me!">
+			</div>
+		</form>
+		<div class="everythingElse">
+			<div id="result" class="result">
+				<p class="todaysDate"></p>
+				<p class="officialName"></p>
+				<p class="officialAddress"></p>
+				<p class="officialGreeting"></p>
+				<p class="letterOpener"></p>
+				<form>
+					<textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden" name="personalLetter" class="personalLetter" rows="3"></textarea>
+				</form>
+				<p class="letterQuestions"></p>
+				<p class="letterCloser"></p>
+				<p class="letterSignoff">Sincerely,</p>
+				<p class="userName"></p>
+				<p class="userAddress"></p>
+			</div>
+			<div class="afterLetter">
+				<p class="printInstructions"></p>
+				<p class="officialEmail"></p>
+			</div>
+		</div>
+	</div>
+	<footer>
+			<p>Civic Minded was created by Lynn Gammie using the <a href="http://represent.opennorth.ca/">Open North Represent Civic Information API</a>. Open North is a nonprofit that builds digital tools for government transparency and civic participation. Questions or suggestions? <a href="mailto:gammie.lynn@gmail.com">Contact Lynn</a>.</p>
+	</footer>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJiNp9WLhIaAVBYrpsPWqCluZWalWjj8"></script>
+	<script src="civicMinded.js"></script>
+	
+</body>
+</html>
