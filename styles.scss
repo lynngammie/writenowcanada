@@ -1,0 +1,319 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+$civicRed:#197878;
+$civicYellow:#FCBF49;
+$civicBeige:#FDFDFD;
+$civicOrange:#D85E00;
+$civicLightGreen: #009688;
+$civicLightLightGreen:#B2DFDB;
+$sans: 'Raleway', sans-serif;
+$serif:'Playfair Display', serif;
+// colour variables go here
+
+html {
+	font-size:62.5%;
+	font-family:$sans;
+}
+
+p {
+	font-size:1.4rem;
+}
+// input[type="text"]::placeholder {
+// 	font-size:1.6rem;
+// }
+
+a {
+	text-decoration:none;
+}
+
+img {
+	max-width:100%;
+}
+
+.wrapper {
+	max-width:1200px;
+	margin:0 auto;
+	background:$civicBeige;
+}
+
+header {
+	// background: url(http://media.web.britannica.com/eb-media/16/100416-004-8F6715C1.jpg);
+	// background-size:cover;
+	// background-attachment: fixed;
+	background:$civicRed;
+	// height:300px;
+	nav {
+		display:flex;
+		background:$civicLightGreen;
+		align-items:center;
+		div.smallcanada {
+			width:50px;
+			margin:0;
+			padding:2px;
+		}
+	}
+	div.hero {
+		padding:20px;
+		width:85%;
+		margin-left:10%;
+		display:flex;
+		align-items:center;
+		p {
+			color:$civicLightLightGreen;
+			font-size:1.6rem;
+		}
+		div {
+			padding:0 10px;
+			width:50%;
+		}
+	}
+	h1,h2 {
+		font-family:$sans;
+		color:$civicYellow;
+		text-transform:uppercase;
+		flex-direction:row;
+		margin:0;
+	}
+	h1 {
+		font-size: 2.4rem;
+	}
+	h2 {
+		color:white;
+		font-size: 5rem;
+		float:left;
+	}
+}
+form.mainForm {
+	width:80%;
+	margin:0 auto;
+	padding:40px 0;
+}
+div.govlist {
+	width:31%;
+	float:left;
+	// color:white;
+	background:$civicYellow;
+	margin:0 1%;
+	padding:20px 12px;
+	text-align:center;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+	border-radius:2px;
+	p.govDescription {
+		font-size: 1.5rem;
+		line-height:2rem;
+	}
+	p.hideGovDescription {
+		display:none;
+	}
+	.govLevel {
+		font-size:2rem;
+		text-transform:uppercase;
+		padding:6px 3px;
+		border:2px solid $civicYellow;
+	}
+	.issueLabel {
+		padding:3px;
+		line-height: 3rem;
+		border:2px solid $civicYellow;
+		white-space:nowrap;
+	}
+	.govLevel:hover, .issueLabel:hover {
+		border:2px solid white;
+		color:white;
+	}
+	input[type=radio] {
+		visibility:hidden;
+	}
+}
+
+div.inputFields {
+	padding:40px;
+ 	input {
+		width:40%;
+		margin:0 4%;
+		padding:5px;
+		height:4rem;
+		font-size:1.6rem;
+		border:3px solid $civicRed;
+		box-shadow: 0 5px 10px rgba(0,0,0,0.1), 0 3px 3px rgba(0,0,0,0.15);
+		border-radius:2px;
+	}
+}
+div.submitButton {
+	width:100%;	
+	input[type="submit"]{
+		background:$civicRed;
+		color:$civicYellow;
+		border:none;
+		display:block;
+		margin: 0 auto;
+		padding:10px;
+		font-size:1.6rem;
+		text-transform:uppercase;
+		letter-spacing: 2px;
+		box-shadow: 0 5px 10px rgba(0,0,0,0.1), 0 3px 3px rgba(0,0,0,0.15);
+		border-radius:2px;
+	}
+	input[type="submit"]:hover {
+		background:$civicYellow;
+		color:$civicRed;
+	}
+}
+
+.hidden_list {
+	display:none;
+	margin:15px 0;
+	font-size:1.5rem;
+	line-height:2rem;
+}
+
+input[type="radio"]:checked ~ div.hidden_list {
+	display:block;
+}
+
+input[type="radio"]:checked + .govLevel, input[type="radio"]:checked + .issueLabel {
+	border:3px solid white;
+	color:white;
+}
+
+input[type="radio"]:checked ~ p.govDescription {
+	display:none;
+}
+
+.result {
+	display:none;
+	max-width:70%;
+	margin:0 auto;
+	border-radius:2px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	padding:40px;
+	font-family:$serif;
+	font-size:1.4rem;
+	p.officialGreeting {
+		margin-top:35px;
+	}
+	p.userName {
+		margin-top:50px;
+	}
+}
+
+.textareaAddress {
+	width:50%;
+}
+
+.personalLetter {
+	width:80%;
+}
+
+input[placeholder] {
+	text-overflow:ellipses;
+}
+
+.result_display {
+	display:block;
+}
+
+
+.afterLetter {
+	width:80%;
+	margin:0 auto;
+	padding:20px 0;
+}
+
+footer {
+	background:$civicLightGreen;
+	padding:10px 20px;
+	p {
+		color:$civicBeige;
+		text-align:center;
+		font-size:1.2rem;
+		line-height:1.6rem;
+		a {
+			color:$civicYellow;
+		}
+	}
+}
+
+@media (max-width:768px) {
+	div.govlist {
+		float:none;
+		width:80%;
+		margin:20px auto;
+
+	}
+}
+
+@media (max-width:480px) {
+	div.govlist {
+		width:100%;
+	}
+	div.inputFields {
+		padding:20px;
+ 		input {
+ 			width:46%;
+ 			margin:0 1%;
+ 			font-size:1.2rem;
+ 		}
+ 	}	
+ 	div.submitButton input[type="submit"] {
+ 		font-size:1.2rem;
+ 	}	
+}
+
+@media print {
+	.wrapper {
+		background:none;
+	}
+	header {
+		display:none;
+		// div.hero {
+		// 	display:none;
+		// }
+		// nav {
+		// 	margin-left:30px;
+		// 	h1 {
+		// 	display:none;
+		// 	}
+		// 	img {
+		// 		filter:greyscale(100%);
+		// 	}
+		// }
+	}
+	.mainForm {
+		display:none;
+	}
+	.result {
+		width:100%;
+		display:block;
+		max-width:100%;
+		margin:0 auto;
+		border-radius:none;
+		box-shadow: none;
+		padding:50px 30px 10px;
+		font-family:$serif;
+		font-size:1.4rem;
+		.personalLetter {
+			border:none;
+			resize: none;
+			width:100%;
+		}
+		.textareaAddress {
+			border:none;
+			resize: none;
+		}
+		.letterQuestions {
+			margin-top:-14px;
+		}
+	}
+	.afterLetter {
+		display:none;
+	}
+	footer {
+		display:none;
+	}
+}

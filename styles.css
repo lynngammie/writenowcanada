@@ -1,0 +1,170 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
+
+audio, canvas, video { display: inline-block; }
+
+audio:not([controls]) { display: none; height: 0; }
+
+[hidden] { display: none; }
+
+html { font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+a:focus { outline: thin dotted; }
+
+a:active, a:hover { outline: 0; }
+
+h1 { font-size: 2em; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: 700; }
+
+dfn { font-style: italic; }
+
+mark { background: #ff0; color: #000; }
+
+code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
+
+pre { white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: \201C \201D \2018 \2019; }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+
+sup { top: -.5em; }
+
+sub { bottom: -.25em; }
+
+img { border: 0; }
+
+svg:not(:root) { overflow: hidden; }
+
+fieldset { border: 1px solid silver; margin: 0 2px; padding: .35em .625em .75em; }
+
+button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; }
+
+button, input { line-height: normal; }
+
+button, html input[type=button], input[type=reset], input[type=submit] { -webkit-appearance: button; cursor: pointer; }
+
+button[disabled], input[disabled] { cursor: default; }
+
+input[type=checkbox], input[type=radio] { box-sizing: border-box; padding: 0; }
+
+input[type=search] { -webkit-appearance: textfield; box-sizing: content-box; }
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration { -webkit-appearance: none; }
+
+textarea { overflow: auto; vertical-align: top; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+body, figure { margin: 0; }
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { box-sizing: border-box; }
+
+html { font-size: 62.5%; font-family: "Raleway", sans-serif; }
+
+p { font-size: 1.4rem; }
+
+a { text-decoration: none; }
+
+img { max-width: 100%; }
+
+.wrapper { max-width: 1200px; margin: 0 auto; background: #FDFDFD; }
+
+header { background: #197878; }
+
+header nav { display: -webkit-flex; display: -ms-flexbox; display: flex; background: #009688; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+header nav div.smallcanada { width: 50px; margin: 0; padding: 2px; }
+
+header div.hero { padding: 20px; width: 85%; margin-left: 10%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+header div.hero p { color: #B2DFDB; font-size: 1.6rem; }
+
+header div.hero div { padding: 0 10px; width: 50%; }
+
+header h1, header h2 { font-family: "Raleway", sans-serif; color: #FCBF49; text-transform: uppercase; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; margin: 0; }
+
+header h1 { font-size: 2.4rem; }
+
+header h2 { color: white; font-size: 5rem; float: left; }
+
+form.mainForm { width: 80%; margin: 0 auto; padding: 40px 0; }
+
+div.govlist { width: 31%; float: left; background: #FCBF49; margin: 0 1%; padding: 20px 12px; text-align: center; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23); border-radius: 2px; }
+
+div.govlist p.govDescription { font-size: 1.5rem; line-height: 2rem; }
+
+div.govlist p.hideGovDescription { display: none; }
+
+div.govlist .govLevel { font-size: 2rem; text-transform: uppercase; padding: 6px 3px; border: 2px solid #FCBF49; }
+
+div.govlist .issueLabel { padding: 3px; line-height: 3rem; border: 2px solid #FCBF49; white-space: nowrap; }
+
+div.govlist .govLevel:hover, div.govlist .issueLabel:hover { border: 2px solid white; color: white; }
+
+div.govlist input[type=radio] { visibility: hidden; }
+
+div.inputFields { padding: 40px; }
+
+div.inputFields input { width: 40%; margin: 0 4%; padding: 5px; height: 4rem; font-size: 1.6rem; border: 3px solid #197878; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.15); border-radius: 2px; }
+
+div.submitButton { width: 100%; }
+
+div.submitButton input[type="submit"] { background: #197878; color: #FCBF49; border: none; display: block; margin: 0 auto; padding: 10px; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.15); border-radius: 2px; }
+
+div.submitButton input[type="submit"]:hover { background: #FCBF49; color: #197878; }
+
+.hidden_list { display: none; margin: 15px 0; font-size: 1.5rem; line-height: 2rem; }
+
+input[type="radio"]:checked ~ div.hidden_list { display: block; }
+
+input[type="radio"]:checked + .govLevel, input[type="radio"]:checked + .issueLabel { border: 3px solid white; color: white; }
+
+input[type="radio"]:checked ~ p.govDescription { display: none; }
+
+.result { display: none; max-width: 70%; margin: 0 auto; border-radius: 2px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); padding: 40px; font-family: "Playfair Display", serif; font-size: 1.4rem; }
+
+.result p.officialGreeting { margin-top: 35px; }
+
+.result p.userName { margin-top: 50px; }
+
+.textareaAddress { width: 50%; }
+
+.personalLetter { width: 80%; }
+
+input[placeholder] { text-overflow: ellipses; }
+
+.result_display { display: block; }
+
+.afterLetter { width: 80%; margin: 0 auto; padding: 20px 0; }
+
+footer { background: #009688; padding: 10px 20px; }
+
+footer p { color: #FDFDFD; text-align: center; font-size: 1.2rem; line-height: 1.6rem; }
+
+footer p a { color: #FCBF49; }
+
+@media (max-width: 768px) { div.govlist { float: none; width: 80%; margin: 20px auto; } }
+
+@media (max-width: 480px) { div.govlist { width: 100%; }
+  div.inputFields { padding: 20px; }
+  div.inputFields input { width: 46%; margin: 0 1%; font-size: 1.2rem; }
+  div.submitButton input[type="submit"] { font-size: 1.2rem; } }
+
+@media print { .wrapper { background: none; }
+  header { display: none; }
+  .mainForm { display: none; }
+  .result { width: 100%; display: block; max-width: 100%; margin: 0 auto; border-radius: none; box-shadow: none; padding: 50px 30px 10px; font-family: "Playfair Display", serif; font-size: 1.4rem; }
+  .result .personalLetter { border: none; resize: none; width: 100%; }
+  .result .textareaAddress { border: none; resize: none; }
+  .result .letterQuestions { margin-top: -14px; }
+  .afterLetter { display: none; }
+  footer { display: none; } }
