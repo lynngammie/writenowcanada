@@ -15,6 +15,7 @@
 			$('html, body').animate ({
         scrollTop: $(".everythingElse").offset().top
         },2200);
+      $('.everythingElse').css('display', 'block');
 		});
 	}
 
@@ -41,7 +42,7 @@
 				var userLat = answer.results[0].geometry.location.lat;
 				var userLng = answer.results[0].geometry.location.lng;
 				var userLatLng = userLat + ',' + userLng;
-				console.log(userLatLng);
+				// console.log(userLatLng);
 				civicMinded.getInfo(userLatLng);
 		});
 	}
@@ -57,6 +58,7 @@
      }).then(function(data) {
      	// var result = data.objects
      	civicMinded.filterResults(data.objects);
+      console.log(data.objects);
     	// 	data.objects.forEach(function(value, index){
      //    // console.log(value);
      //    // civicMinded.allResultsArray.push(value);
@@ -74,7 +76,6 @@
 
   civicMinded.filterResults = function(data) {
 
-  	// console.log(data);
   	var comparator = {
   		municipal: ['councillor', 'mayor'],
   		provincial: ['mpp', 'mla'],
@@ -90,9 +91,11 @@
   }
 
   civicMinded.showResults = function(singleResult) {
-  	console.log(singleResult);
+  	// console.log(singleResult);
   	$('#chosenIssue').text(civicMinded.userIssue);
+    //what if there is no name?
   	$('#electedOfficialName').text(singleResult[0].name);
+
   	var today = new Date();
   	var year = today.getFullYear();
   	var month = today.getMonth()+1;
@@ -154,20 +157,45 @@
   	$('.letterCloser').text('Thank you for your continued commitment to the ' + civicMinded.govLevel + ' government and the constituents of ' + userArea + '.');
   	$('.userName').text(civicMinded.userName);
   	$('.userAddress').text(civicMinded.userInput);
-  	$('.printInstructions').text('Use the print function on your browser (ctrl / cmmd P or File > Print) to print out this letter. You may send mail to MPs free of postage, providing that you are only sending printed material.');
-  	$('.officialEmail').html('Rather send an email? Contact ' + singleResult[0].name + ' at <a href="mailto:' + singleResult[0].email + '">' + singleResult[0].email + '</a>.');
+  	$('.printInstructions').html('You may send mail to MPs free of postage, providing that you are only sending printed material.');
+  	$('.officialEmail').html('Rather send an email? Contact ' + singleResult[0].name + ' at <a href="mailto:' + singleResult[0].email + '">' + singleResult[0].email + '</a> or hit the button below to copy your letter to email.');
   }
 
   civicMinded.showIssues = function(){
   	$('.govSquare').on('click',function(){
-  		console.log('working YEHHAWWWW');
+  		// console.log('working YEHHAWWWW');
   		// $('.govDescription').addClass("hideGovDescription");
   	});
   }
 
+  civicMinded.cycleFacts = function(){
+
+    var words = $(".fact-item");
+    var wordIndex = -1;
+    
+    //add one to word index, 
+    function showNextQuote() {
+        ++wordIndex;
+        words.eq(wordIndex % words.length)
+            .fadeIn(1500)
+            .delay(4000)
+            .fadeOut(1500, showNextQuote);
+    }
+    showNextQuote();
+
+  };
+
+  civicMinded.print = function(){
+    $('#printme').on('click', function(e){
+      e.preventDefault();
+      window.print();
+    })
+  }
+
 	civicMinded.init = function(){
 		civicMinded.getInput();
-		// civicMinded.getInfo();
+		civicMinded.cycleFacts();
+    civicMinded.print();
 	}
 
 	$(document).ready(function(){

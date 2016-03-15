@@ -5,12 +5,13 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-$civicRed:#197878;
-$civicYellow:#FCBF49;
+$civicYellow:#C8B6A7;
 $civicBeige:#FDFDFD;
-$civicOrange:#D85E00;
-$civicLightGreen: #009688;
+$civicLightGreen: #3A506B;
+$headerOverlay: rgba(23,31,42,0.6);
 $civicLightLightGreen:#B2DFDB;
+$civicBeige:#E8E3E0;
+$civicBeigeOverlay:rgba(91,89,88,0.5);
 $sans: 'Raleway', sans-serif;
 $serif:'Playfair Display', serif;
 // colour variables go here
@@ -20,12 +21,13 @@ html {
 	font-family:$sans;
 }
 
+body {
+	background:$civicBeige;
+}
+
 p {
 	font-size:1.4rem;
 }
-// input[type="text"]::placeholder {
-// 	font-size:1.6rem;
-// }
 
 a {
 	text-decoration:none;
@@ -36,75 +38,148 @@ img {
 }
 
 .wrapper {
-	max-width:1200px;
+	max-width:1500px;
 	margin:0 auto;
 	background:$civicBeige;
+	position:relative;
+	z-index:1;
 }
 
+//header styles
+
 header {
-	// background: url(http://media.web.britannica.com/eb-media/16/100416-004-8F6715C1.jpg);
-	// background-size:cover;
-	// background-attachment: fixed;
-	background:$civicRed;
-	// height:300px;
-	nav {
-		display:flex;
-		background:$civicLightGreen;
-		align-items:center;
-		div.smallcanada {
-			width:50px;
-			margin:0;
-			padding:2px;
-		}
-	}
-	div.hero {
-		padding:20px;
-		width:85%;
-		margin-left:10%;
-		display:flex;
-		align-items:center;
-		p {
-			color:$civicLightLightGreen;
-			font-size:1.6rem;
-		}
-		div {
-			padding:0 10px;
-			width:50%;
-		}
-	}
-	h1,h2 {
-		font-family:$sans;
-		color:$civicYellow;
-		text-transform:uppercase;
-		flex-direction:row;
-		margin:0;
-	}
-	h1 {
-		font-size: 2.4rem;
-	}
+	background-image:url(../assets/mountains.jpeg);
+	background-size: cover;
+	height:100vh;
+}
+
+.overlay {
+	background-color:$headerOverlay;
+	height:100vh;
+}
+
+.fact-item {
+	display:none;
+	font-size:5rem;
+	font-weight:bold;
+	color:$civicBeige;
+}
+
+nav {
+	display:flex;
+	background:$civicLightGreen;
+	align-items:center;
 	h2 {
 		color:white;
-		font-size: 5rem;
-		float:left;
+		text-transform:uppercase;
+		letter-spacing: 2px;
+		font-size:2rem;
+		margin:10px 15px;
+	}
+	div.smallcanada, .menu {
+		display:flex;
+		width:50%;
+		margin:0;
+		padding:2px;
+		img {
+			width:40px;
+			height:40px;
+		}
+	}
+	.menu {
+		justify-content:flex-end;
+		a {
+			color:white;
+		}
+		a:hover {
+			color:$civicYellow;
+		}
 	}
 }
+	
+div.hero {
+	position:relative;
+	height:calc(100vh - 44px);
+	width:80%;
+	margin:0 auto;
+	display:flex;
+	align-items:center;
+}
+
+.scrolldown {
+	position:absolute;
+	bottom:10%;
+	left:49%;
+	text-align:center;
+	color:white;
+	font-size:1.6rem;
+	a {
+		color:white;
+	}
+	a:hover {
+		color:$civicYellow;
+	}
+	i {
+		font-size:4rem;
+	}
+}
+
+//body styles
+
+.write-wrapper {
+	width:100%;
+	background-color: $headerOverlay;
+}
+#write {
+	width:80%;
+	padding:60px 0;
+	margin:0 auto;
+	color:$civicBeige;
+	h2 {
+		text-transform:uppercase;
+		font-size:4rem;
+	}
+	p {
+		font-size:1.8rem;
+		font-weight: bold;
+		letter-spacing: 1px;
+		line-height:1.4;
+	}
+}
+
+.outline {
+	position:absolute;
+	width:100%;
+	top:0;
+	z-index:-2;
+}
+
 form.mainForm {
 	width:80%;
 	margin:0 auto;
 	padding:40px 0;
 }
+
+.govOuterWrapper {
+	width:100%;
+	background:$civicBeigeOverlay;
+	padding:60px 40px;
+}
+
+.govWrapper {
+	// background:$civicYellow;
+	opacity:0.9;
+}
+
 div.govlist {
 	width:31%;
 	float:left;
-	// color:white;
-	background:$civicYellow;
 	margin:0 1%;
 	padding:20px 12px;
 	text-align:center;
-	box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
 	border-radius:2px;
 	p.govDescription {
-		font-size: 1.5rem;
+		font-size: 1.7rem;
 		line-height:2rem;
 	}
 	p.hideGovDescription {
@@ -112,19 +187,24 @@ div.govlist {
 	}
 	.govLevel {
 		font-size:2rem;
+		font-weight: bold;
 		text-transform:uppercase;
-		padding:6px 3px;
-		border:2px solid $civicYellow;
+		letter-spacing:2px;
+		padding:6px 3px 3px;
+		border-bottom:3px solid $civicLightGreen;
 	}
 	.issueLabel {
-		padding:3px;
+		padding:4px;
 		line-height: 3rem;
-		border:2px solid $civicYellow;
 		white-space:nowrap;
+		font-size:1.6rem;
 	}
-	.govLevel:hover, .issueLabel:hover {
-		border:2px solid white;
-		color:white;
+	.govLevel:hover {
+		
+	}
+	.issueLabel:hover {
+		border:2px solid $civicLightGreen;
+		padding:2px;
 	}
 	input[type=radio] {
 		visibility:hidden;
@@ -139,15 +219,14 @@ div.inputFields {
 		padding:5px;
 		height:4rem;
 		font-size:1.6rem;
-		border:3px solid $civicRed;
-		box-shadow: 0 5px 10px rgba(0,0,0,0.1), 0 3px 3px rgba(0,0,0,0.15);
+		border:3px solid $civicLightGreen;
 		border-radius:2px;
 	}
 }
-div.submitButton {
+div.submitButton, .button {
 	width:100%;	
 	input[type="submit"]{
-		background:$civicRed;
+		background:$civicLightGreen;
 		color:$civicYellow;
 		border:none;
 		display:block;
@@ -156,12 +235,11 @@ div.submitButton {
 		font-size:1.6rem;
 		text-transform:uppercase;
 		letter-spacing: 2px;
-		box-shadow: 0 5px 10px rgba(0,0,0,0.1), 0 3px 3px rgba(0,0,0,0.15);
 		border-radius:2px;
 	}
 	input[type="submit"]:hover {
 		background:$civicYellow;
-		color:$civicRed;
+		color:$civicLightGreen;
 	}
 }
 
@@ -176,17 +254,27 @@ input[type="radio"]:checked ~ div.hidden_list {
 	display:block;
 }
 
-input[type="radio"]:checked + .govLevel, input[type="radio"]:checked + .issueLabel {
-	border:3px solid white;
-	color:white;
+input[type="radio"]:checked + .govLevel {
+	border:3px solid $civicLightGreen;
+	// color:white;
+}
+
+input[type="radio"]:checked + .issueLabel {
+	border:2px solid $civicLightGreen;
 }
 
 input[type="radio"]:checked ~ p.govDescription {
 	display:none;
 }
 
+.everythingElse {
+	padding:60px 0;
+	display:none;
+}
+
 .result {
 	display:none;
+	background:white;
 	max-width:70%;
 	margin:0 auto;
 	border-radius:2px;
@@ -220,9 +308,19 @@ input[placeholder] {
 
 
 .afterLetter {
+	// display:none;
 	width:80%;
 	margin:0 auto;
 	padding:20px 0;
+}
+
+.printInstructions, .officialEmail {
+	margin-top:40px;
+	text-align:center;
+	a {
+		color:inherit;
+		text-decoration:underline;
+	}
 }
 
 footer {
@@ -231,12 +329,32 @@ footer {
 	p {
 		color:$civicBeige;
 		text-align:center;
-		font-size:1.2rem;
+		font-size:1.4rem;
 		line-height:1.6rem;
 		a {
 			color:$civicYellow;
 		}
 	}
+}
+
+#printme, #emailme {
+
+}
+
+
+.about {
+	width:100%;
+	background:$headerOverlay;
+	padding:60px 40px;
+	color:$civicBeige;
+	p {
+		font-size:1.6rem;
+		a {
+			text-decoration: underline;
+			color:inherit;
+		}
+	}
+	
 }
 
 @media (max-width:768px) {
@@ -268,27 +386,26 @@ footer {
 @media print {
 	.wrapper {
 		background:none;
+		img.outline {
+			display:none;
+		}
 	}
+
 	header {
 		display:none;
-		// div.hero {
-		// 	display:none;
-		// }
-		// nav {
-		// 	margin-left:30px;
-		// 	h1 {
-		// 	display:none;
-		// 	}
-		// 	img {
-		// 		filter:greyscale(100%);
-		// 	}
-		// }
 	}
+
+	.write-wrapper {
+		display:none;
+	}
+
 	.mainForm {
 		display:none;
 	}
+
 	.result {
-		width:100%;
+		// background:url(../assets/canadaOutlineBeige.svg);
+		// background-size:cover;
 		display:block;
 		max-width:100%;
 		margin:0 auto;
@@ -307,12 +424,17 @@ footer {
 			resize: none;
 		}
 		.letterQuestions {
-			margin-top:-14px;
+			margin-top:-20px;
 		}
 	}
 	.afterLetter {
 		display:none;
 	}
+
+	.about {
+		display:none;
+	}
+
 	footer {
 		display:none;
 	}

@@ -8,31 +8,53 @@
   <meta name="author" content="Lynn Gammie">
   <link rel="icon" 
       type="image/png" 
-      href="assets/canadaOutlineYellow.png">
+      href="assets/canadaOutlineBeigeThick.png">
 	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:700,400|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 	<header>
+		<div class="overlay">
 		<nav>
 			<div class="smallcanada">
-				<img src="assets/canadaOutlineYellow.png" alt="Outline of Canada">
+				<img src="assets/canadaOutlineBeigeThick.svg" alt="Outline of Canada">
+			<h2>Write now, Canada!</h2>
 			</div>
-			<h1>Write now, Canada!</h1>
+			<div class="menu">
+				<h2><a href="#write">Write a Letter</a></h2>
+				<h2><a href="#about">About</a></h2>
+			</div>
 		</nav>
 		<div class="hero">
-			<div>
-				<img class="canada" src="assets/canadaOutlineYellow.png" alt="Yellow outline of Canada">
+			<div class="facts-master">
+				<p class="fact-item">The unemployment rate in Canada sits at 7.3% as of January 2016.</p>
+				<p class="fact-item">Voter turnout in the 2015 federal election was 68.3%, the highest in two decades.</p>
+				<p class="fact-item">Canadians emit 14.68 metric tons of CO2 per capita, only slightly less than Americans.</p>
+				<p class="fact-item">Canada is the 5th largest agricultural exporter in the world.</p>
+				<p class="fact-item">The budget for Canadian infrastructure spending is about $125 billion over the next ten years.</p>
 			</div>
-			<div>
-				<h2>Write now, Canada!</h2>
-				<p>A simple and intelligent way to draft a letter to your local councillor, MPP or MP about the government issues that matter to you. Choose a municipal, provincial or federal issue below and get writing.</p>
+			<div class="scrolldown">
+				<!-- <p>Do something about it!</p> -->
+				<a href="#write">
+				<i class="fa fa-chevron-down"></i>
+				</a>
+			</div>
+		</div>
 		</div>
 	</header>
 
 	<div class="wrapper">
-		<form id="addressForm" class="mainForm">	
+		<img class="outline" src="assets/canadaOutlineBeige.svg" alt="Canada outline">
+		<div class="write-wrapper">
+			<div id="write">
+				<h2>Write now, Canada!</h2>
+				<p>As a Canadian, your voice matters. But sometimes it's hard to feel like you can make a difference, or that your voice is being heard by the right people. Write Now, Canada! is a simple and intelligent way to draft a letter to your local councillor, MPP or MP about the government issues that matter to you. Choose a municipal, provincial or federal issue below and get writing.</p>
+			</div>
+		</div>
+		<div class="govOuterWrapper">
+		<form id="addressForm" class="mainForm">
 			<div class="govWrapper clearfix">
 				<div class="govlist">
 					<input type="radio" id="municipal" name="government" value="municipal">
@@ -104,6 +126,9 @@
 				<input type="submit" value="Draft a letter for me!">
 			</div>
 		</form>
+		</div>
+
+
 		<div class="everythingElse">
 			<div id="result" class="result">
 				<p class="todaysDate"></p>
@@ -122,12 +147,17 @@
 			</div>
 			<div class="afterLetter">
 				<p class="printInstructions"></p>
+				<p class="button"><input type="submit" id="printme" value="PRINT YOUR LETTER" ></input></p>
 				<p class="officialEmail"></p>
+				<p class="button"><input type="submit" id="emailme" value="EMAIL YOUR LETTER"></input></p>
 			</div>
 		</div>
 	</div>
+	<div id="about" class="about">
+		<p>Civic Minded was created by Lynn Gammie using the <a href="http://represent.opennorth.ca/">Open North Represent Civic Information API</a>. Open North is a nonprofit that builds digital tools for government transparency and civic participation. Questions or suggestions? <a href="mailto:gammie.lynn@gmail.com">Contact Lynn</a>.</p>
+	</div>
 	<footer>
-			<p>Civic Minded was created by Lynn Gammie using the <a href="http://represent.opennorth.ca/">Open North Represent Civic Information API</a>. Open North is a nonprofit that builds digital tools for government transparency and civic participation. Questions or suggestions? <a href="mailto:gammie.lynn@gmail.com">Contact Lynn</a>.</p>
+			<p>Designed and Coded by Lynn Gammie, Copyright © 2016</p>
 	</footer>
 	
 	
