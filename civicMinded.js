@@ -11,18 +11,17 @@
 			civicMinded.getLocation(civicMinded.userInput);
 			civicMinded.govLevel = $('input[name="government"]:checked').val();
 			civicMinded.userIssue = $('input[name="' + civicMinded.govLevel + '"]:checked').val();
-			// console.log(userIssue);
-			$('html, body').animate ({
-        scrollTop: $(".everythingElse").offset().top
-        },2200);
       $('.everythingElse').css('display', 'block');
+      $('html, body').animate({
+        scrollTop: $(".everythingElse").offset().top
+         }, 2000);
 		});
 	}
 
-	function textAreaAdjust(o) {
-    o.style.height = "1px";
-    o.style.height = (25+o.scrollHeight)+"px";
-}
+// 	function textAreaAdjust(o) {
+//     o.style.height = "1px";
+//     o.style.height = (25+o.scrollHeight)+"px";
+// }
 
 
 	// }
@@ -59,18 +58,6 @@
      	// var result = data.objects
      	civicMinded.filterResults(data.objects);
       console.log(data.objects);
-    	// 	data.objects.forEach(function(value, index){
-     //    // console.log(value);
-     //    // civicMinded.allResultsArray.push(value);
-     //    // console.log(civicMinded.allResultsArray);
-     //    var allResults = value;
-     //    // console.log(allResults);
-     //    // console.log(govLevel);
-     //    // console.log(allResults.elected_office);
-     //    if (allResults.elected_office === civicMinded.govLevel || allResults.elected_office === 'Mayor'){
-     //  	console.log(allResults);
-     //  }
-    	// });
  		});
   }
 
@@ -158,13 +145,12 @@
   	$('.userName').text(civicMinded.userName);
   	$('.userAddress').text(civicMinded.userInput);
   	$('.printInstructions').html('You may send mail to MPs free of postage, providing that you are only sending printed material.');
-  	$('.officialEmail').html('Rather send an email? Contact ' + singleResult[0].name + ' at <a href="mailto:' + singleResult[0].email + '">' + singleResult[0].email + '</a> or hit the button below to copy your letter to email.');
+  	$('.officialEmail').html('Rather send an email? Contact ' + singleResult[0].name + ' at <a href="mailto:' + singleResult[0].email + '">' + singleResult[0].email + '</a> or hit the button below to copy your letter to the clipboard. When your email client opens, hit ctrl/cmmd + v to paste.');
+    $('.mailto').html('<a href="mailto:' + singleResult[0].email + '?subject=' + singleResult[0].district_name + ':%20' + civicMinded.userIssue + '" id="copyclip" data-clipboard-target="#result" value="COPY TO CLIPBOARD">SEND YOUR EMAIL</a>');
   }
 
   civicMinded.showIssues = function(){
   	$('.govSquare').on('click',function(){
-  		// console.log('working YEHHAWWWW');
-  		// $('.govDescription').addClass("hideGovDescription");
   	});
   }
 
@@ -190,14 +176,51 @@
       e.preventDefault();
       window.print();
     })
-  }
+  };
+
+  civicMinded.copyLetter = function(){
+    $('#copyclip').on('click', function(e){
+      e.preventDefault;
+      var userText = $('#userPara').val();
+      $('.userText').text(userText);
+      $('.textForm').remove();
+      $('.textareaAddress').remove();
+      new Clipboard('#copyclip');
+    })
+    
+  };
+
+  civicMinded.smoothscroll = function(){
+    $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+  };
 
 	civicMinded.init = function(){
 		civicMinded.getInput();
 		civicMinded.cycleFacts();
     civicMinded.print();
+    civicMinded.copyLetter();
+    civicMinded.smoothscroll();
+
+    $('.hamburger').on('click', function(event){
+      event.preventDefault();
+      $('.hamburger-container').slideToggle();
+    });
+
 	}
+
 
 	$(document).ready(function(){
 		civicMinded.init();
+
 	});

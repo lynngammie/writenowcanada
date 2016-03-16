@@ -78,13 +78,15 @@ a { text-decoration: none; }
 
 img { max-width: 100%; }
 
-.wrapper { max-width: 1500px; margin: 0 auto; background: #E8E3E0; position: relative; z-index: 1; }
+.wrapper { max-width: 1500px; background-image: url(../assets/canadaOutlineBeige.svg); background-size: 100%; background-repeat: no-repeat; margin: 0 auto; position: relative; z-index: 1; }
 
 header { background-image: url(../assets/mountains.jpeg); background-size: cover; height: 100vh; }
 
 .overlay { background-color: rgba(23, 31, 42, 0.6); height: 100vh; }
 
-.fact-item { display: none; font-size: 5rem; font-weight: bold; color: #E8E3E0; }
+.fact-item { display: none; font-size: 4rem; font-weight: bold; color: #E8E3E0; }
+
+.hamburger { display: none; color: white; font-size: 30px; }
 
 nav { display: -webkit-flex; display: -ms-flexbox; display: flex; background: #3A506B; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
 
@@ -100,7 +102,15 @@ nav .menu a { color: white; }
 
 nav .menu a:hover { color: #C8B6A7; }
 
+.hamburger-container { display: none; position: absolute; width: 100%; background: #3A506B; margin-top: 0; padding: 10px; z-index: 5; }
+
+.hamburger-container h2 { color: white; text-transform: uppercase; text-align: right; letter-spacing: 2px; font-size: 2rem; }
+
+.hamburger-container h2 a { color: inherit; }
+
 div.hero { position: relative; height: calc(100vh - 44px); width: 80%; margin: 0 auto; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+h1 { font-size: 5rem; color: white; text-transform: uppercase; letter-spacing: 3px; }
 
 .scrolldown { position: absolute; bottom: 10%; left: 49%; text-align: center; color: white; font-size: 1.6rem; }
 
@@ -110,31 +120,35 @@ div.hero { position: relative; height: calc(100vh - 44px); width: 80%; margin: 0
 
 .scrolldown i { font-size: 4rem; }
 
-.write-wrapper { width: 100%; background-color: rgba(23, 31, 42, 0.6); }
+.write-wrapper { width: 100%; }
 
-#write { width: 80%; padding: 60px 0; margin: 0 auto; color: #E8E3E0; }
+#write { width: 80%; background-color: rgba(255, 255, 255, 0.6); padding: 40px; margin: 40px auto 0; }
 
 #write h2 { text-transform: uppercase; font-size: 4rem; }
 
 #write p { font-size: 1.8rem; font-weight: bold; letter-spacing: 1px; line-height: 1.4; }
 
-.outline { position: absolute; width: 100%; top: 0; z-index: -2; }
+.outline { position: absolute; width: 100%; top: 50vh; z-index: -2; }
 
 form.mainForm { width: 80%; margin: 0 auto; padding: 40px 0; }
 
-.govOuterWrapper { width: 100%; background: rgba(91, 89, 88, 0.5); padding: 60px 40px; }
+.govOuterWrapper { width: 80%; margin: 0 auto 40px; background-color: rgba(255, 255, 255, 0.6); padding: 0px; }
 
 .govWrapper { opacity: 0.9; }
 
-div.govlist { width: 31%; float: left; margin: 0 1%; padding: 20px 12px; text-align: center; border-radius: 2px; }
+.pickLevel { width: 80%; text-align: center; margin: 0 auto; font-size: 2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; padding: 6px 3px 3px; border-bottom: 3px solid #3A506B; }
 
-div.govlist p.govDescription { font-size: 1.7rem; line-height: 2rem; }
+div.govlist { width: 31%; float: left; margin: 20px 1%; padding: 20px 12px; text-align: center; border-radius: 2px; }
+
+div.govlist p.govDescription { font-size: 1.7rem; line-height: 2rem; display: none; }
 
 div.govlist p.hideGovDescription { display: none; }
 
-div.govlist .govLevel { font-size: 2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; padding: 6px 3px 3px; border-bottom: 3px solid #3A506B; }
+div.govlist .govLevel { font-size: 2rem; font-weight: bold; color: #E8E3E0; text-transform: uppercase; letter-spacing: 2px; padding: 10px; background: #3A506B; border-radius: 2px; }
 
 div.govlist .issueLabel { padding: 4px; line-height: 3rem; white-space: nowrap; font-size: 1.6rem; }
+
+div.govlist .govLevel:hover { color: #C8B6A7; }
 
 div.govlist .issueLabel:hover { border: 2px solid #3A506B; padding: 2px; }
 
@@ -154,7 +168,7 @@ div.submitButton input[type="submit"]:hover, .button input[type="submit"]:hover 
 
 input[type="radio"]:checked ~ div.hidden_list { display: block; }
 
-input[type="radio"]:checked + .govLevel { border: 3px solid #3A506B; }
+input[type="radio"]:checked + .govLevel { border: 3px solid #3A506B; color: #3A506B; background: #E8E3E0; }
 
 input[type="radio"]:checked + .issueLabel { border: 2px solid #3A506B; }
 
@@ -178,6 +192,10 @@ input[placeholder] { text-overflow: ellipses; }
 
 .afterLetter { width: 80%; margin: 0 auto; padding: 20px 0; }
 
+.afterLetter .mailto { width: 216px; text-align: center; background: #3A506B; color: #C8B6A7; border: none; display: block; margin: 0 auto; padding: 10px; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 2px; border-radius: 2px; }
+
+.afterLetter a { color: inherit; }
+
 .printInstructions, .officialEmail { margin-top: 40px; text-align: center; }
 
 .printInstructions a, .officialEmail a { color: inherit; text-decoration: underline; }
@@ -188,18 +206,28 @@ footer p { color: #E8E3E0; text-align: center; font-size: 1.4rem; line-height: 1
 
 footer p a { color: #C8B6A7; }
 
-.about { width: 100%; background: rgba(23, 31, 42, 0.6); padding: 60px 40px; color: #E8E3E0; }
+.about-wrapper { background: rgba(23, 31, 42, 0.6); }
+
+.about { width: 80%; margin: 0 auto; padding: 60px 40px; color: #E8E3E0; }
 
 .about p { font-size: 1.6rem; }
 
 .about p a { text-decoration: underline; color: inherit; }
 
-@media (max-width: 768px) { div.govlist { float: none; width: 80%; margin: 20px auto; } }
-
-@media (max-width: 480px) { div.govlist { width: 100%; }
+@media (max-width: 768px) { div.govlist { float: none; width: 80%; margin: 20px auto; }
+  .hamburger { display: block; margin-right: 10px; }
+  nav { -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+  nav .menu { display: none; }
   div.inputFields { padding: 20px; }
   div.inputFields input { width: 46%; margin: 0 1%; font-size: 1.2rem; }
-  div.submitButton input[type="submit"] { font-size: 1.2rem; } }
+  .personalLetter { width: 100%; }
+  .result { width: 90%; } }
+
+@media (max-width: 480px) { .fact-item { font-size: 3rem; }
+  .textareaAddress { width: 100%; }
+  div.govlist { width: 100%; }
+  div.submitButton input[type="submit"] { font-size: 1.2rem; }
+  div.inputFields input { display: block; width: 80%; margin: 10px auto; } }
 
 @media print { .wrapper { background: none; }
   .wrapper img.outline { display: none; }

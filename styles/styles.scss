@@ -9,6 +9,7 @@ $civicYellow:#C8B6A7;
 $civicBeige:#FDFDFD;
 $civicLightGreen: #3A506B;
 $headerOverlay: rgba(23,31,42,0.6);
+$whiteOverlay: rgba(255,255,255,0.6);
 $civicLightLightGreen:#B2DFDB;
 $civicBeige:#E8E3E0;
 $civicBeigeOverlay:rgba(91,89,88,0.5);
@@ -39,8 +40,10 @@ img {
 
 .wrapper {
 	max-width:1500px;
+	background-image:url(../assets/canadaOutlineBeige.svg);
+	background-size:100%;
+	background-repeat: no-repeat;
 	margin:0 auto;
-	background:$civicBeige;
 	position:relative;
 	z-index:1;
 }
@@ -60,9 +63,15 @@ header {
 
 .fact-item {
 	display:none;
-	font-size:5rem;
+	font-size:4rem;
 	font-weight:bold;
 	color:$civicBeige;
+}
+
+.hamburger {
+	display:none;
+	color:white;
+	font-size:30px;
 }
 
 nav {
@@ -96,6 +105,26 @@ nav {
 		}
 	}
 }
+
+.hamburger-container {
+	display:none;
+	position:absolute;
+	width:100%;
+	background:$civicLightGreen;
+	margin-top:0;
+	padding:10px;
+	z-index:5;
+	h2 {
+		color:white;
+		text-transform:uppercase;
+		text-align:right;
+		letter-spacing:2px;
+		font-size:2rem;
+		a {
+			color:inherit;
+		}
+	}
+}
 	
 div.hero {
 	position:relative;
@@ -104,6 +133,13 @@ div.hero {
 	margin:0 auto;
 	display:flex;
 	align-items:center;
+}
+
+h1 {
+	font-size:5rem;
+	color:white;
+	text-transform:uppercase;
+	letter-spacing:3px;
 }
 
 .scrolldown {
@@ -128,13 +164,13 @@ div.hero {
 
 .write-wrapper {
 	width:100%;
-	background-color: $headerOverlay;
+	
 }
 #write {
 	width:80%;
-	padding:60px 0;
-	margin:0 auto;
-	color:$civicBeige;
+	background-color: $whiteOverlay;
+	padding:40px;
+	margin:40px auto 0;
 	h2 {
 		text-transform:uppercase;
 		font-size:4rem;
@@ -150,7 +186,8 @@ div.hero {
 .outline {
 	position:absolute;
 	width:100%;
-	top:0;
+	// top:100vh;
+	top:50vh;
 	z-index:-2;
 }
 
@@ -161,9 +198,10 @@ form.mainForm {
 }
 
 .govOuterWrapper {
-	width:100%;
-	background:$civicBeigeOverlay;
-	padding:60px 40px;
+	width:80%;
+	margin:0 auto 40px;
+	background-color: $whiteOverlay;
+	padding:0px;
 }
 
 .govWrapper {
@@ -171,16 +209,29 @@ form.mainForm {
 	opacity:0.9;
 }
 
+.pickLevel {
+	width:80%;
+	text-align:center;
+	margin:0 auto;
+	font-size:2rem;
+	font-weight: bold;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	padding:6px 3px 3px;
+	border-bottom:3px solid $civicLightGreen;
+}
+
 div.govlist {
 	width:31%;
 	float:left;
-	margin:0 1%;
+	margin:20px 1%;
 	padding:20px 12px;
 	text-align:center;
 	border-radius:2px;
 	p.govDescription {
 		font-size: 1.7rem;
 		line-height:2rem;
+		display:none;
 	}
 	p.hideGovDescription {
 		display:none;
@@ -188,10 +239,12 @@ div.govlist {
 	.govLevel {
 		font-size:2rem;
 		font-weight: bold;
+		color:$civicBeige;
 		text-transform:uppercase;
 		letter-spacing:2px;
-		padding:6px 3px 3px;
-		border-bottom:3px solid $civicLightGreen;
+		padding:10px;
+		background: $civicLightGreen;
+		border-radius:2px;
 	}
 	.issueLabel {
 		padding:4px;
@@ -200,7 +253,7 @@ div.govlist {
 		font-size:1.6rem;
 	}
 	.govLevel:hover {
-		
+		color:$civicYellow;
 	}
 	.issueLabel:hover {
 		border:2px solid $civicLightGreen;
@@ -256,7 +309,8 @@ input[type="radio"]:checked ~ div.hidden_list {
 
 input[type="radio"]:checked + .govLevel {
 	border:3px solid $civicLightGreen;
-	// color:white;
+	color:$civicLightGreen;
+	background:$civicBeige;
 }
 
 input[type="radio"]:checked + .issueLabel {
@@ -312,6 +366,24 @@ input[placeholder] {
 	width:80%;
 	margin:0 auto;
 	padding:20px 0;
+	.mailto {
+		width:216px;
+		text-align:center;
+		background:$civicLightGreen;
+		color:$civicYellow;
+		border:none;
+		display:block;
+		margin: 0 auto;
+		padding:10px;
+		font-size:1.6rem;
+		text-transform:uppercase;
+		letter-spacing: 2px;
+		border-radius:2px;
+	}
+	a {
+		
+		color:inherit;
+	}
 }
 
 .printInstructions, .officialEmail {
@@ -341,10 +413,14 @@ footer {
 
 }
 
+.about-wrapper {
+	background:$headerOverlay;
+}
 
 .about {
-	width:100%;
-	background:$headerOverlay;
+	width:80%;
+	margin:0 auto;
+	
 	padding:60px 40px;
 	color:$civicBeige;
 	p {
@@ -362,14 +438,21 @@ footer {
 		float:none;
 		width:80%;
 		margin:20px auto;
-
 	}
-}
 
-@media (max-width:480px) {
-	div.govlist {
-		width:100%;
+	.hamburger {
+		display:block;
+		margin-right:10px;
 	}
+
+	nav {
+		justify-content:space-between;
+		.menu {
+		display:none;
+		// position:absolute;
+		}
+	}
+
 	div.inputFields {
 		padding:20px;
  		input {
@@ -378,9 +461,42 @@ footer {
  			font-size:1.2rem;
  		}
  	}	
+
+ 	.personalLetter {
+ 		width:100%;
+ 	}
+
+ 	.result {
+ 		width:90%;
+ 	}
+	
+}
+
+@media (max-width:480px) {
+	
+	.fact-item {
+	font-size:3rem;
+	}
+
+	.textareaAddress {
+		width:100%;
+	}
+
+	div.govlist {
+		width:100%;
+	}
  	div.submitButton input[type="submit"] {
  		font-size:1.2rem;
  	}	
+
+	div.inputFields {
+ 		input {
+ 			display:block;
+ 			width:80%;
+ 			margin:10px auto;
+ 		}
+ 	}	
+
 }
 
 @media print {

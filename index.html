@@ -26,7 +26,12 @@
 				<h2><a href="#write">Write a Letter</a></h2>
 				<h2><a href="#about">About</a></h2>
 			</div>
+			<a class="hamburger" href=""><i class="fa fa-bars"></i></a>
 		</nav>
+		<div class="hamburger-container">
+				<h2><a href="#write">Write a Letter</a></h2>
+				<h2><a href="#about">About</a></h2>
+		</div>
 		<div class="hero">
 			<div class="facts-master">
 				<p class="fact-item">The unemployment rate in Canada sits at 7.3% as of January 2016.</p>
@@ -46,7 +51,6 @@
 	</header>
 
 	<div class="wrapper">
-		<img class="outline" src="assets/canadaOutlineBeige.svg" alt="Canada outline">
 		<div class="write-wrapper">
 			<div id="write">
 				<h2>Write now, Canada!</h2>
@@ -56,6 +60,7 @@
 		<div class="govOuterWrapper">
 		<form id="addressForm" class="mainForm">
 			<div class="govWrapper clearfix">
+			<p class="pickLevel">Select a level of government below</p>
 				<div class="govlist">
 					<input type="radio" id="municipal" name="government" value="municipal">
 					<label class="govLevel" for="municipal">municipal</label>
@@ -123,7 +128,7 @@
 				<input id="textInput" type="text" placeholder="Your address">
 			</div>
 			<div class="submitButton">
-				<input type="submit" value="Draft a letter for me!">
+				<input id="submitButton" type="submit" value="Draft a letter for me!">
 			</div>
 		</form>
 		</div>
@@ -136,8 +141,9 @@
 				<p class="officialAddress"></p>
 				<p class="officialGreeting"></p>
 				<p class="letterOpener"></p>
-				<form>
-					<textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden" name="personalLetter" class="personalLetter" rows="3"></textarea>
+				<p class="userText"></p>
+				<form class="textForm">
+					<textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden" name="personalLetter" id="userPara" class="personalLetter" rows="3"></textarea>
 				</form>
 				<p class="letterQuestions"></p>
 				<p class="letterCloser"></p>
@@ -149,13 +155,16 @@
 				<p class="printInstructions"></p>
 				<p class="button"><input type="submit" id="printme" value="PRINT YOUR LETTER" ></input></p>
 				<p class="officialEmail"></p>
-				<p class="button"><input type="submit" id="emailme" value="EMAIL YOUR LETTER"></input></p>
+				<p class="mailto" id="copyclip"></p>
+			</div>
+		</div>
+		<div class="about-wrapper">
+			<div id="about" class="about">
+				<p>Civic Minded was created by Lynn Gammie using the <a href="http://represent.opennorth.ca/">Open North Represent Civic Information API</a>. Open North is a nonprofit that builds digital tools for government transparency and civic participation. Questions or suggestions? <a href="mailto:gammie.lynn@gmail.com">Contact Lynn</a>.</p>
 			</div>
 		</div>
 	</div>
-	<div id="about" class="about">
-		<p>Civic Minded was created by Lynn Gammie using the <a href="http://represent.opennorth.ca/">Open North Represent Civic Information API</a>. Open North is a nonprofit that builds digital tools for government transparency and civic participation. Questions or suggestions? <a href="mailto:gammie.lynn@gmail.com">Contact Lynn</a>.</p>
-	</div>
+	
 	<footer>
 			<p>Designed and Coded by Lynn Gammie, Copyright © 2016</p>
 	</footer>
@@ -163,7 +172,9 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJiNp9WLhIaAVBYrpsPWqCluZWalWjj8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
 	<script src="civicMinded.js"></script>
+
 	
 </body>
 </html>
